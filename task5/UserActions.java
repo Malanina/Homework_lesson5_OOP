@@ -36,15 +36,14 @@ public class UserActions implements DoUser {
 
     @Override
     public void addContact(Object object) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addContact'");
+        System.out.println(XMLFile);
     }
+    
 
 
     @Override
     public void findContact() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findContact'");
+        System.out.println(XMLFile);;
     }
     
 

@@ -1,7 +1,7 @@
 package task5;
 
 
-public class Contact {
+public class Contact implements Comparable<Contact>{
     private String name;
     private String number;
   
@@ -45,4 +45,29 @@ public class Contact {
                 ": " + getName();
     }
 
+    @Override
+    public int compareTo(Contact obj) {
+        return this.name.compareTo(obj.name);
+    
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Contact contact = (Contact) o;
+
+        if (getNumber() != contact.getNumber()) {
+            return false;
+
+        }
+        return getName() != null
+                ? getName().equals(contact.getName())
+                : contact.getName() == null;
+
+    }
 }

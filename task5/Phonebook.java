@@ -3,8 +3,8 @@ package task5;
 import java.util.*;
 
 public class Phonebook implements Iterable<Contact>{
-    private static final Phonebook phonebook = null;
-    private static final Scanner scanner = null;
+    private ArrayList<Phonebook>phonebook;
+    Scanner scanner = new Scanner(System.in);
     private ArrayList<Contact> contacts;
     protected static String XMLFile = "/Homework_lesson5_OOP/task5/Phonebook.xml";
 
@@ -51,13 +51,22 @@ public class Phonebook implements Iterable<Contact>{
     }
 
     
-    public void addContact(String name, String number){
+    
+
+    public void addContact(/*String name, String number*/){
         System.out.println("Добавьте имя контакта");
         String name = scanner.nextLine();
     
         System.out.println("Добавьте номер контакта");
         String number = scanner.nextLine();
 
-        phonebook.add(new Contact(name, number));
+        HashSet<String> numbers = new HashSet<>();
+        numbers.add(number);
+        phonebook.put(name, numbers);
+
+        //phonebook.add(new Contact(name, number));
     }
-}
+    
+    }
+    
+
